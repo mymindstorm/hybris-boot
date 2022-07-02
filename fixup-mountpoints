@@ -1910,6 +1910,85 @@ case "$DEVICE" in
             -e 's block/platform/soc/1da4000.ufshc/by-name/xbl_b sdc1 ' \
             "$@"
         ;;
+
+    # This may be the same config for "bonito".
+    "sargo")
+        sed -i \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/ImageFv mmcblk0p57 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/abl_a mmcblk0p26 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/abl_b mmcblk0p27 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/aop_a mmcblk0p8 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/aop_b mmcblk0p9 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/apdp_a mmcblk0p30 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/apdp_b mmcblk0p31 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/bluetooth_a mmcblk0p40 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/bluetooth_b mmcblk0p41 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/boot_a mmcblk0p13 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/boot_b mmcblk0p14 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/cdt mmcblk0p1 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/cmnlib64_a mmcblk0p18 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/cmnlib64_b mmcblk0p20 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/cmnlib_a mmcblk0p17 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/cmnlib_b mmcblk0p19 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/ddr mmcblk0p38 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/devcfg_a mmcblk0p51 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/devcfg_b mmcblk0p52 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/devinfo mmcblk0p29 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/dip mmcblk0p28 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/dpo mmcblk0p33 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/dtbo_a mmcblk0p44 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/dtbo_b mmcblk0p45 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/ffufw mmcblk0p67 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/frp mmcblk0p58 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/fsc mmcblk0p42 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/fsg mmcblk0p12 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/hyp_a mmcblk0p10 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/hyp_b mmcblk0p11 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/keymaster_a mmcblk0p15 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/keymaster_b mmcblk0p16 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/keystore mmcblk0p50 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/klog mmcblk0p65 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/limits mmcblk0p35 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/logfs mmcblk0p37 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/metadata mmcblk0p66 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/misc mmcblk0p49 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/modem_a mmcblk0p21 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/modem_b mmcblk0p22 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/modemcal mmcblk0p55 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/modemst1 mmcblk0p46 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/modemst2 mmcblk0p47 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/msadp_a mmcblk0p23 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/msadp_b mmcblk0p24 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/persist mmcblk0p48 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/qupfw_a mmcblk0p53 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/qupfw_b mmcblk0p54 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/rawdump mmcblk0p62 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/reserved mmcblk0p25 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/sec mmcblk0p39 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/splash mmcblk0p34 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/spunvm mmcblk0p32 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/ssd mmcblk0p43 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/sti mmcblk0p59 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/storsec_a mmcblk0p60 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/storsec_b mmcblk0p61 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/system_a mmcblk0p68 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/system_b mmcblk0p69 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/toolsfv mmcblk0p36 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/tz_a mmcblk0p6 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/tz_b mmcblk0p7 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/uefivar mmcblk0p56 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/userdata mmcblk0p72 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/vbmeta_a mmcblk0p63 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/vbmeta_b mmcblk0p64 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/vendor_a mmcblk0p70 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/vendor_b mmcblk0p71 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/xbl_a mmcblk0p2 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/xbl_b mmcblk0p3 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/xbl_config_a mmcblk0p4 ' \
+            -e 's block/platform/soc/7c4000.sdhci/by-name/xbl_config_b mmcblk0p5 ' \
+            "$@"
+        ;;
+
     *)
         cat <<EOF
 
