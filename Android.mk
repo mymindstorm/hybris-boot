@@ -46,7 +46,7 @@ HYBRIS_FIXUP_MOUNTS := $(shell ls -1 $(LOCAL_PATH)/../fixup-mountpoints $(LOCAL_
 # but Cyanogenmod seems to use device/*/$(TARGET_DEVICE) in config.mk so we will too.
 HYBRIS_FSTABS := $(shell find device/*/$(TARGET_DEVICE) -name *fstab* | grep -v goldfish)
 # If fstab files were not found from primary device repo then they might be in
-# some other device repo so try to search for them first in device/PRODUCT_MANUFACTURER. 
+# some other device repo so try to search for them first in device/PRODUCT_MANUFACTURER.
 # In many cases PRODUCT_MANUFACTURER is the short vendor name used in folder names.
 ifeq "$(HYBRIS_FSTABS)" ""
 TARGET_VENDOR := "$(shell echo $(PRODUCT_MANUFACTURER) | tr '[:upper:]' '[:lower:]')"
@@ -99,6 +99,10 @@ endif
 
 ifdef BOARD_KERNEL_PAGESIZE
   HYBRIS_BOOTIMAGE_ARGS += --pagesize $(BOARD_KERNEL_PAGESIZE)
+endif
+
+ifeq ($(BOARD_INCLUDE_DTB_IN_BOOTIMG),true)
+  HYBRIS_BOOTIMAGE_ARGS += --dtb $(PRODUCT_OUT)/dtb.img
 endif
 
 # Specify the BOOT/RECOVERY vars here as they're not impacted by
